@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لینک‌های آراسته</title>
+  <style>
+    
+    @font-face {
+     font-family: 'Iranian Sans';
+     src: url('D:\Amirali\Work\Spice (؟)\Accounting\Iranian Sans.ttf') format('ttf'); /* مسیر فایل فونت */
+     }
+
+    body, .title, .url, .btn, .open, .note, .lead, h1, h3, p, li, ol {
+    font-family: 'Iranian Sans', sans-serif !important;
+    }
+
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    body{background:linear-gradient(180deg,#071024 0%, #071a2a 100%);color:#e6eef5;display:flex;align-items:center;justify-content:center;padding:24px}
+    .wrap{width:100%;max-width:900px}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    .brand{display:flex;flex-direction:column}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.04)}
+    .links{display:flex;flex-direction:column;gap:8px}
+    .link-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:8px;border-radius:8px;background:var(--glass)}
+    .left{display:flex;gap:10px;align-items:center;min-width:0}
+    .fav{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));flex-shrink:0}
+    .meta{overflow:hidden}
+    .title{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .url{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .actions{display:flex;gap:8px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;color:var(--muted);font-size:13px;cursor:pointer}
+    .btn:hover{color:#fff;border-color:rgba(255,255,255,0.08)}
+    a.open{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:8px 12px;border-radius:8px;color:#021020;text-decoration:none;font-weight:600}
+
+    .top-actions{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+    .note{font-size:13px;color:var(--muted);margin-top:11px;line-height:1.5}
+
+    footer{margin-top:14px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>لینک‌های آراسته</h1>
+        <p class="lead">این یک صفحه ساده برای نمایش مرتب و قابل کلیک لینک‌ ها با قابلیت کلیک و کپی هستش. </p>
+      </div>
+    </header>
+
+    <div class="top-actions">
+      <button class="btn" id="copyAll">کپی همه لینک‌ها</button>
+      <button class="btn" id="download">دانلود HTML</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin:0 0 12px 0">پلتفرم‌ها</h3>
+        <div class="links" id="links">
+          <!-- لینک‌ها اینجا قرار می‌گیرند -->
+        </div>
+        <p class="note">برای باز کردن هر لینک روی گزینه Open کلیک کنید یا اون رو کپی و در مرورگر خود جایگذاری کنید.</p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px 0">درباره</h3>
+        <p style="margin:0 0 8px 0;color:var(--muted)">این صفحه یک فایل سادهٔ HTML/CSS/JS است که می‌توانی روی GitHub Pages یا Netlify میزبانی کنی. لینک‌ها قابل کلیک، کپی و باز شدن در تب جدید هستند.</p>
+        <div style="margin-top:8px">
+          <strong>راهنما کوتاه میزبانی:</strong>
+          <ol style="color:var(--muted);padding-left:18px;margin:6px 0 0 0">
+            <li>یک مخزن در GitHub بساز و این فایل را به نام <code>index.html</code> اضافه کن.</li>
+            <li>در تنظیمات repo، GitHub Pages را از شاخهٔ main فعال کن — صفحه با آدرس <code>username.github.io/repo</code> بالا می‌آید.</li>
+            <li>یا این فایل را در Netlify بکش و رها کن (Drag & Drop) تا به‌سرعت میزبانی شود.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // === لینک‌های پیش‌فرض — این آرایه را به دلخواه خودت تغییر بده ===
+    const links = [
+      {title: 'SproutGigs', url: 'https://www.sproutgigs.com'},
+      {title: 'Ponisha', url: 'https://ponisha.ir'},
+      {title: 'MihanStore', url: 'https://mihanstore.net'},
+      {title: 'Divar', url: 'https://divar.ir'},
+      {title: 'YouTube — PBA', url: 'https://www.youtube.com/@PBA07'},
+      {title: 'YouTube — Topnumber', url: 'https://www.youtube.com/@topnumber3106'},
+      {title: 'YouTube — ProsVsCons', url: 'https://www.youtube.com/@ProsVsCons'},
+      {title: 'YouTube — Cookbook', url: 'https://www.youtube.com/@cookbook023'}
+    ];
+
+    const container = document.getElementById('links');
+    links.forEach(l => {
+      const row = document.createElement('div');
+      row.className = 'link-row';
+
+      const left = document.createElement('div'); left.className = 'left';
+      const fav = document.createElement('div'); fav.className = 'fav';
+      fav.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" fill-opacity="0.9"/></svg>';
+
+      const meta = document.createElement('div'); meta.className = 'meta';
+      const title = document.createElement('div'); title.className = 'title'; title.textContent = l.title;
+      const url = document.createElement('div'); url.className = 'url'; url.textContent = l.url;
+
+      meta.appendChild(title); meta.appendChild(url);
+      left.appendChild(fav); left.appendChild(meta);
+
+      const actions = document.createElement('div'); actions.className = 'actions';
+      const open = document.createElement('a'); open.className = 'open'; open.href = l.url; open.target = '_blank'; open.rel='noopener noreferrer'; open.textContent = 'Open';
+      const copy = document.createElement('button'); copy.className = 'btn'; copy.textContent = 'Copy';
+      copy.addEventListener('click', ()=>{navigator.clipboard.writeText(l.url).then(()=>{copy.textContent='Copied'; setTimeout(()=>copy.textContent='Copy',1200)})});
+
+      actions.appendChild(open); actions.appendChild(copy);
+
+      row.appendChild(left); row.appendChild(actions);
+      container.appendChild(row);
+    });
+
+    // copy all
+    document.getElementById('copyAll').addEventListener('click', ()=>{
+      const all = links.map(l=>l.url).join('\n');
+      navigator.clipboard.writeText(all).then(()=>{document.getElementById('copyAll').textContent='کپی شد'; setTimeout(()=>document.getElementById('copyAll').textContent='کپی همه لینک‌ها',1200)});
+    });
+
+    // download file
+    document.getElementById('download').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'links_page.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+  </script>
+</body>
+</html>
